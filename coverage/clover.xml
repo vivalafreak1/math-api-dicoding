@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653458444513" clover="3.2.0">
-  <project timestamp="1653458444513" name="All files">
-    <metrics statements="20" coveredstatements="20" conditionals="24" coveredconditionals="24" methods="4" coveredmethods="3" elements="48" coveredelements="47" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
+<coverage generated="1653458646047" clover="3.2.0">
+  <project timestamp="1653458646047" name="All files">
+    <metrics statements="26" coveredstatements="26" conditionals="32" coveredconditionals="32" methods="4" coveredmethods="4" elements="62" coveredelements="62" complexity="0" loc="26" ncloc="26" packages="1" files="1" classes="1"/>
     <file name="MathBasic.js" path="E:\project\back-end\expert-exercise-dicoding\math-api\src\MathBasic.js">
-      <metrics statements="20" coveredstatements="20" conditionals="24" coveredconditionals="24" methods="4" coveredmethods="3"/>
+      <metrics statements="26" coveredstatements="26" conditionals="32" coveredconditionals="32" methods="4" coveredmethods="4"/>
       <line num="1" count="1" type="stmt"/>
       <line num="3" count="10" type="cond" truecount="4" falsecount="0"/>
       <line num="4" count="4" type="stmt"/>
@@ -23,7 +23,13 @@
       <line num="35" count="6" type="cond" truecount="4" falsecount="0"/>
       <line num="36" count="3" type="stmt"/>
       <line num="39" count="3" type="stmt"/>
-      <line num="46" count="1" type="stmt"/>
+      <line num="42" count="10" type="cond" truecount="4" falsecount="0"/>
+      <line num="43" count="4" type="stmt"/>
+      <line num="46" count="6" type="stmt"/>
+      <line num="48" count="6" type="cond" truecount="4" falsecount="0"/>
+      <line num="49" count="3" type="stmt"/>
+      <line num="52" count="3" type="stmt"/>
+      <line num="56" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
