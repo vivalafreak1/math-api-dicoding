@@ -40,7 +40,7 @@ describe('A FigureCalculator', () => {
         });
     });
 
-    describe('A calcualteRectangleArea Function', () => {
+    describe('A calculateRectangleArea Function', () => {
         it('Should throw error when not given 2 parameters', () => {
             const figureCalculator = new FigureCalculator({});
 
@@ -65,4 +65,7 @@ describe('A FigureCalculator', () => {
             expect(figureCalculator.calculateRectangleArea(3, 7)).toEqual(21);
         });
     });
+
+
+
 });
