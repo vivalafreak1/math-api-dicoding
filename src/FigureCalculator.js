@@ -30,7 +30,19 @@ class FigureCalculator {
 
         return (length*width);
     }
-    calculateTrianglePerimeter() { }
+    calculateTrianglePerimeter(...args) { 
+        if(args.length !== 3){
+            throw new Error('Fungsi hanya menerima tiga parameter');
+        }
+
+        const [verA, verB, verC] = args; 
+
+        if(typeof verA !== 'number' || typeof verB !== 'number' || typeof verC !== 'number'){
+            throw new Error('Fungsi hanya menerima parameter number');
+        }
+
+        return (verA+verB+verC);
+    }
     calculateTriangleArea() { }
 }
 

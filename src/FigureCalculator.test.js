@@ -66,6 +66,30 @@ describe('A FigureCalculator', () => {
         });
     });
 
+    describe('A calculateTrianglePerimeter Function', () => {
+        it('Should throw error when not given 3 parameters', () => {
+            const figureCalculator = new FigureCalculator({});
 
+            expect(() => figureCalculator.calculateTrianglePerimeter()).toThrowError();
+            expect(() => figureCalculator.calculateTrianglePerimeter(2)).toThrowError();
+            expect(() => figureCalculator.calculateTrianglePerimeter(3, 5)).toThrowError();            
+        });
+
+        it('Should throw error when given non-number parameters', () => {
+            const figureCalculator = new FigureCalculator({});
+
+            expect(() => figureCalculator.calculateTrianglePerimeter('1', '2', '3')).toThrowError();
+            expect(() => figureCalculator.calculateTrianglePerimeter([], {}, 4)).toThrowError();
+            expect(() => figureCalculator.calculateTrianglePerimeter(null, false, true)).toThroArea
+        });
+
+        it('Should return rectangle area when given three number parameters', () => {
+            const figureCalculator = new FigureCalculator({});
+
+            expect(figureCalculator.calculateTrianglePerimeter(2, 2, 3)).toEqual(7);
+            expect(figureCalculator.calculateTrianglePerimeter(10, 5, 5)).toEqual(20);
+            expect(figureCalculator.calculateTrianglePerimeter(3, 7, 6)).toEqual(16);
+        });
+    });
 
 });
