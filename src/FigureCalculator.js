@@ -17,7 +17,19 @@ class FigureCalculator {
         return (2 * (length + width));
         //return this._mathBasic.multiply(2, this._mathBasic.add(length, width));
     }
-    calculateRectangleArea() { }
+    calculateRectangleArea(...args) { 
+        if(args.length !== 2){
+            throw new Error('Fungsi hanya menerima dua parameter');
+        }
+
+        const [length, width] = args; 
+
+        if(typeof length !== 'number' || typeof width !== 'number'){
+            throw new Error('Fungsi hanya menerima parameter number');
+        }
+
+        return (length*width);
+    }
     calculateTrianglePerimeter() { }
     calculateTriangleArea() { }
 }
