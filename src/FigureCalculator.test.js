@@ -106,7 +106,7 @@ describe('A FigureCalculator', () => {
 
             expect(() => figureCalculator.calculateTriangleArea('1', '2')).toThrowError();
             expect(() => figureCalculator.calculateTriangleArea([], {})).toThrowError();
-            expect(() => figureCalculator.calculateTriangleArea(false, true)).toThroArea
+            expect(() => figureCalculator.calculateTriangleArea(false, true)).toThrowError();
         });
 
         it('Should return triangle area when given three number parameters', () => {
