@@ -137,4 +137,50 @@ describe('A HTTP Server', () => {
         });
     });
 
+    describe('When GET /triangle/parameter/{verA}/{verB}/{verC}', () => {
+        it('Should respond with a status code of 200 and the payload value is perimeter triangle result of vertice A, vertice B, and vertice C correctly', async () => {
+            // Arrange
+            const verA = 10;
+            const verB = 5;
+            const verC = 7;
+            const figureCalculator = new FigureCalculator(MathBasic);
+            const spyCalculateTrianglePerimeter = jest.spyOn(figureCalculator, 'calculateTrianglePerimeter');
+            const server = createServer({ figureCalculator });
+
+            // Action
+            const response = await server.inject({
+                method: 'GET',
+                url: `/triangle/perimeter/${verA}/${verB}/${verC}`,
+            });
+
+            // Assert
+            const responseJson = JSON.parse(response.payload);
+            expect(response.statusCode).toEqual(200);
+            expect(responseJson.value).toEqual(22); // (verA + verB + verC)
+            expect(spyCalculateTrianglePerimeter).toBeCalledWith(verA, verB, verC);
+        });
+    });
+
+    describe('When GET /triangle/area/{height}/{base}', () => {
+        it('Should respond with a status code of 200 and the payload value is area triangle result of height and base correctly', async () => {
+            // Arrange
+            const height = 10;
+            const base = 5;
+            const figureCalculator = new FigureCalculator(MathBasic);
+            const spyCalculateTriangleArea = jest.spyOn(figureCalculator, 'calculateTriangleArea');
+            const server = createServer({ figureCalculator });
+
+            // Action
+            const response = await server.inject({
+                method: 'GET',
+                url: `/triangle/area/${height}/${base}`,
+            });
+
+            // Assert
+            const responseJson = JSON.parse(response.payload);
+            expect(response.statusCode).toEqual(200);
+            expect(responseJson.value).toEqual(25); // ((height*base) / 2)
+            expect(spyCalculateTriangleArea).toBeCalledWith(height, base);
+        });
+    });
 });
