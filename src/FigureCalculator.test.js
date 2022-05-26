@@ -83,7 +83,7 @@ describe('A FigureCalculator', () => {
             expect(() => figureCalculator.calculateTrianglePerimeter(null, false, true)).toThroArea
         });
 
-        it('Should return rectangle area when given three number parameters', () => {
+        it('Should return triangle perimeter when given three number parameters', () => {
             const figureCalculator = new FigureCalculator({});
 
             expect(figureCalculator.calculateTrianglePerimeter(2, 2, 3)).toEqual(7);
@@ -92,4 +92,29 @@ describe('A FigureCalculator', () => {
         });
     });
 
+    describe('A calculateTriangleArea Function', () => {
+        it('Should throw error when not given 2 parameters', () => {
+            const figureCalculator = new FigureCalculator({});
+
+            expect(() => figureCalculator.calculateTriangleArea()).toThrowError();
+            expect(() => figureCalculator.calculateTriangleArea(2)).toThrowError();
+            expect(() => figureCalculator.calculateTriangleArea(3, 5, 6)).toThrowError();            
+        });
+
+        it('Should throw error when given non-number parameters', () => {
+            const figureCalculator = new FigureCalculator({});
+
+            expect(() => figureCalculator.calculateTriangleArea('1', '2')).toThrowError();
+            expect(() => figureCalculator.calculateTriangleArea([], {})).toThrowError();
+            expect(() => figureCalculator.calculateTriangleArea(false, true)).toThroArea
+        });
+
+        it('Should return triangle area when given three number parameters', () => {
+            const figureCalculator = new FigureCalculator({});
+
+            expect(figureCalculator.calculateTriangleArea(2, 2)).toEqual(2);
+            expect(figureCalculator.calculateTriangleArea(10, 5)).toEqual(25);
+            expect(figureCalculator.calculateTriangleArea(3, 8)).toEqual(12);
+        });
+    });
 });
