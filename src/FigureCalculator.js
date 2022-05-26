@@ -14,8 +14,8 @@ class FigureCalculator {
             throw new Error('Fungsi hanya menerima parameter number');
         }
 
-        //formula: (2 * (length + width))
-        return this._mathBasic.multiply(2, this._mathBasic.add(length, width));
+        return (2 * (length + width));
+        //return this._mathBasic.multiply(2, this._mathBasic.add(length, width));
     }
     calculateRectangleArea() { }
     calculateTrianglePerimeter() { }
